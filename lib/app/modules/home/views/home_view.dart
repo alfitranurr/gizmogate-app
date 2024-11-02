@@ -8,23 +8,28 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // Menggunakan BoxDecoration untuk menambahkan gambar sebagai latar belakang
       body: Container(
+        height: 300,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/bg_home.png'), // Ganti dengan path gambar Anda
-            fit: BoxFit.cover, // Menyesuaikan gambar agar menutupi area
+            image: AssetImage(
+                'assets/bg_home.png'), // Ganti dengan path gambar Anda
+            fit: BoxFit.cover,
           ),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppBar(
+              backgroundColor: Colors.black.withOpacity(
+                  0.5), // Mengatur warna latar belakang AppBar dengan transparansi
               title: Row(
                 children: [
-                  Expanded(
+                  Container(
+                    width: 180, // Ubah lebar sesuai kebutuhan
                     child: TextField(
                       decoration: InputDecoration(
+                        isDense: true, // Mengatur agar TextField lebih kecil
                         prefixIcon: const Icon(Icons.search),
                         hintText: 'Search...',
                         border: OutlineInputBorder(
@@ -33,20 +38,21 @@ class HomeView extends GetView<HomeController> {
                         ),
                         filled: true,
                         fillColor: Colors.white,
-                        contentPadding: const EdgeInsets.all(8),
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 4, horizontal: 8), // Padding lebih kecil
                       ),
                     ),
                   ),
                   IconButton(
-                    icon: const Icon(Icons.notifications),
+                    icon: const Icon(Icons.notifications, color: Colors.white),
                     onPressed: () {},
                   ),
                   IconButton(
-                    icon: const Icon(Icons.shopping_cart),
+                    icon: const Icon(Icons.shopping_cart, color: Colors.white),
                     onPressed: () {},
                   ),
                   IconButton(
-                    icon: const Icon(Icons.person),
+                    icon: const Icon(Icons.person, color: Colors.white),
                     onPressed: () {},
                   ),
                 ],
@@ -54,32 +60,35 @@ class HomeView extends GetView<HomeController> {
             ),
             Expanded(
               child: Container(
-                color: Colors.white, // Warna putih untuk area di bawah rectangle
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Padding(
                       padding: EdgeInsets.only(left: 16, top: 16),
                       child: Text(
-                        'Hai',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        'Hai!',
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
                       ),
                     ),
                     const Padding(
                       padding: EdgeInsets.only(left: 16, top: 8),
                       child: Text(
                         'Selamat Datang di Gizmogate',
-                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(12),
                       child: Container(
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        // Rectangle untuk tombol upload dan ikon
                         decoration: BoxDecoration(
                           color: Colors.grey[800],
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: BorderRadius.circular(8),
                           boxShadow: const [
                             BoxShadow(
                               color: Colors.black12,
@@ -88,7 +97,7 @@ class HomeView extends GetView<HomeController> {
                             ),
                           ],
                         ),
-                        padding: const EdgeInsets.all(16),
+                        padding: const EdgeInsets.all(8),
                         child: Column(
                           children: [
                             Row(
@@ -97,52 +106,71 @@ class HomeView extends GetView<HomeController> {
                                 ElevatedButton(
                                   onPressed: () {},
                                   style: ElevatedButton.styleFrom(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 8, vertical: 4),
+                                    minimumSize: const Size(80, 30),
                                     backgroundColor: Colors.white,
                                     foregroundColor: Colors.black,
+                                    textStyle: const TextStyle(fontSize: 12),
                                   ),
                                   child: const Row(
+                                    mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      Icon(Icons.upload),
-                                      SizedBox(width: 5),
+                                      Icon(Icons.upload, size: 16),
+                                      SizedBox(width: 4),
                                       Text('Upload Produk'),
                                     ],
                                   ),
                                 ),
                                 const Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                  mainAxisSize: MainAxisSize.min,
                                   children: [
                                     Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Icon(Icons.edit, color: Colors.white),
-                                        SizedBox(width: 5),
+                                        Icon(Icons.edit,
+                                            color: Colors.white, size: 16),
+                                        SizedBox(width: 4),
                                         Text("Status Produk",
-                                            style: TextStyle(color: Colors.white)),
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 10)),
                                       ],
                                     ),
-                                    SizedBox(width: 10),
+                                    SizedBox(width: 8),
                                     Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Icon(Icons.sell, color: Colors.white),
-                                        SizedBox(width: 5),
-                                        Text("Penjualan", style: TextStyle(color: Colors.white)),
+                                        Icon(Icons.sell,
+                                            color: Colors.white, size: 16),
+                                        SizedBox(width: 4),
+                                        Text("Penjualan",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 10)),
                                       ],
                                     ),
-                                    SizedBox(width: 10),
+                                    SizedBox(width: 8),
                                     Column(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Icon(Icons.shopping_cart, color: Colors.white),
-                                        SizedBox(width: 5),
-                                        Text("Pembelian", style: TextStyle(color: Colors.white)),
+                                        Icon(Icons.shopping_cart,
+                                            color: Colors.white, size: 16),
+                                        SizedBox(width: 4),
+                                        Text("Pembelian",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 10)),
                                       ],
-                                    )
+                                    ),
                                   ],
-                                )
+                                ),
                               ],
                             ),
-                            const SizedBox(height: 16), // Spasi tambahan di bawah
+                            const SizedBox(height: 8),
                           ],
                         ),
                       ),
