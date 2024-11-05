@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gizmogate/app/modules/transaksi/controllers/transaksi_controller.dart';
 
-class TransaksiView extends StatelessWidget {
+import '../../navbar/views/navbar_view.dart';
+import '../controllers/transaksi_controller.dart';
+
+class TransaksiView extends GetView<TransaksiController> {
+  const TransaksiView({super.key});
   @override
   Widget build(BuildContext context) {
     final TransaksiController controller = Get.find<TransaksiController>();
@@ -62,6 +66,7 @@ class TransaksiView extends StatelessWidget {
           ),
         ],
       ),
+      bottomNavigationBar: const NavbarView(),
     );
   }
 
