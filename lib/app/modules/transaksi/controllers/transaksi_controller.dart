@@ -1,23 +1,12 @@
+// transaksi_controller.dart
 import 'package:get/get.dart';
 
+enum TransaksiFilter { semuaPesanan, dalamPengiriman, pesananSelesai }
+
 class TransaksiController extends GetxController {
-  //TODO: Implement TransaksiController
+  var selectedFilter = TransaksiFilter.semuaPesanan.obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  void updateFilter(TransaksiFilter filter) {
+    selectedFilter.value = filter;
   }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
 }
