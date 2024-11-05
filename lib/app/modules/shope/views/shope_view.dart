@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../navbar/views/navbar_view.dart';
-import '../controllers/transaksi_controller.dart';
+import '../controllers/shope_controller.dart';
 
-class TransaksiView extends GetView<TransaksiController> {
-  const TransaksiView({super.key});
+class ShopeView extends GetView<ShopeController> {
+  const ShopeView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('TransaksiView'),
+        title: const Text('ShopeView'),
         centerTitle: true,
       ),
       body: const Center(
         child: Text(
-          'TransaksiView is working',
+          'ShopeView is working',
           style: TextStyle(fontSize: 20),
         ),
       ),
