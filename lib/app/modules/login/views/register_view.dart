@@ -1,12 +1,12 @@
-// login_view.dart
+// register_view.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controllers/login_controller.dart';
+import '../controllers/register_controller.dart';
 
-class LoginView extends StatelessWidget {
+class RegisterView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final LoginController controller = Get.find<LoginController>();
+    final RegisterController controller = Get.find<RegisterController>();
 
     return Scaffold(
       body: Padding(
@@ -29,23 +29,23 @@ class LoginView extends StatelessWidget {
             ),
             SizedBox(height: 40),
 
-            // Login Text
+            // Register Text
             Text(
-              'Login',
+              'Register',
               style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 8),
             Text(
-              'Please sign in to continue',
+              'Please register to continue',
               style: TextStyle(color: Colors.grey),
             ),
             SizedBox(height: 32),
 
             // Username TextField
             TextField(
-              controller: controller.emailController,
+              controller: controller.usernameController,
               decoration: InputDecoration(
-                hintText: 'Email',
+                hintText: 'Username',
                 prefixIcon: Icon(Icons.person),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
@@ -75,22 +75,23 @@ class LoginView extends StatelessWidget {
             ),
             SizedBox(height: 16),
 
-            // Forgot Password Link
-            Align(
-              alignment: Alignment.centerRight,
-              child: TextButton(
-                onPressed: () {
-                  // Forgot password functionality
-                },
-                child: Text(
-                  "Forgot password?",
-                  style: TextStyle(color: Colors.grey),
+            // Email TextField
+            TextField(
+              controller: controller.emailController,
+              decoration: InputDecoration(
+                hintText: 'Email',
+                prefixIcon: Icon(Icons.email),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                  borderSide: BorderSide.none,
                 ),
+                filled: true,
+                fillColor: Colors.grey[200],
               ),
             ),
-            SizedBox(height: 16),
+            SizedBox(height: 32),
 
-            // Login Button with loading state
+            // Register Button with loading state
             Obx(() {
               return controller.isLoading.value
                   ? CircularProgressIndicator()
@@ -99,24 +100,24 @@ class LoginView extends StatelessWidget {
                         minimumSize: Size(double.infinity, 50),
                         backgroundColor: Colors.black,
                       ),
-                      onPressed: controller.signIn,
-                      child: Text("Sign In"),
+                      onPressed: controller.signUp,
+                      child: Text("Register"),
                     );
             }),
 
             SizedBox(height: 16),
 
-            // Register Link
+            // Login Link
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Don't have an account? "),
+                Text("Already have an account? "),
                 GestureDetector(
                   onTap: () {
-                    Get.toNamed('/register');
+                    Get.toNamed('/login');
                   },
                   child: Text(
-                    "Register",
+                    "Sign In",
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,

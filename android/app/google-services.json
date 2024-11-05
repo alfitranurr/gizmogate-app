@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "695952533978",
+    "project_id": "gizmogate-97717",
+    "storage_bucket": "gizmogate-97717.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695952533978:android:b7b86390a6325988a138e3",
+        "android_client_info": {
+          "package_name": "com.example.gizmogate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfBBxa5W1FVcs2CLa-D3To7hCaXXFp46c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
