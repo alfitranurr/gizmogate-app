@@ -43,7 +43,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SHOPE,
-      page: () => const ShopeView(),
+      page: () => ShopeView(),
       binding: ShopeBinding(),
     ),
   ];
