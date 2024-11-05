@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../navbar/views/navbar_view.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
@@ -276,6 +277,7 @@ class HomeView extends GetView<HomeController> {
           ],
         ),
       ),
+      bottomNavigationBar: const NavbarView(),
     );
   }
 

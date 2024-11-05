@@ -1,12 +1,7 @@
 import 'package:get/get.dart';
 
-class NavbarController extends GetxController {
-  //TODO: Implement NavbarController
-  var currentIndex = 0.obs;
-
-  // void changeIndex(int index) {
-  //   currentIndex.value = index;
-  // }
+class ShopeController extends GetxController {
+  //TODO: Implement ShopeController
 
   final count = 0.obs;
   @override
