@@ -5,50 +5,93 @@ class ShopeController extends GetxController {
     {
       'name': 'Kulkas Sedingin Antartika',
       'price': 12000000,
-      'desc': 'ini deskripsi barang secara ringkas aja bang ya',
-      'category': 'Perabotan'
+      'desc': 'Simpan Kesegaran Maksimal, Tanpa Kompromi!',
+      'category': 'Perabotan',
+      'image': 'assets/Kulkas.jpg'
     },
     {
       'name': 'Alat Pijat Santay!',
       'price': 2000000,
-      'desc': 'ini deskripsi barang secara ringkas aja bang ya',
-      'category': 'Alat Masak'
+      'desc': 'Relaksasi Instan, Bebas Lelah di Mana Saja!',
+      'category': 'Alat Masak',
+      'image': 'assets/Alat Pijat.jpg'
     },
     {
       'name': 'Boneka Labubu',
       'price': 2000000,
-      'desc': 'ini deskripsi barang secara ringkas aja bang ya',
-      'category': 'Perabotan'
+      'desc': 'Teman Imut yang Bikin Hari Selalu Ceria!',
+      'category': 'Perabotan',
+      'image': 'assets/Labubu.jpg'
     },
     {
       'name': 'DX Kamen Rider',
       'price': 2000000,
-      'desc': 'ini deskripsi barang secara ringkas aja bang ya',
-      'category': 'Elektronik'
+      'desc': 'Hadirkan Aksi Sang Pahlawan di Genggamanmu!',
+      'category': 'Elektronik',
+      'image': 'assets/DX Kamen Rider.jpg'
     },
     {
       'name': 'Sepeda Listrik Eco',
       'price': 5000000,
-      'desc': 'sepeda listrik ramah lingkungan',
-      'category': 'Elektronik'
+      'desc': 'Hemat Energi, Maksimalkan Petualangan!',
+      'category': 'Elektronik',
+      'image': 'assets/Sepeda Listrik Eco.jpg'
     },
     {
       'name': 'Laptop Acer Nitro',
       'price': 9000000,
-      'desc': 'laptop gaming murah meriah',
-      'category': 'Elektronik'
+      'desc': 'Performa Gahar untuk Kemenangan Tanpa Batas!',
+      'category': 'Elektronik',
+      'image': 'assets/Acer Nitro 16.jpg'
     },
     {
       'name': 'Mesin Jahit Singer',
       'price': 7000000,
-      'desc': 'mesin jahit handal',
-      'category': 'Perabotan'
+      'desc': 'Kreasi Sempurna di Setiap Jahitan!',
+      'category': 'Perabotan',
+      'image': 'assets/Mesin Jahit.jpg'
     },
     {
       'name': 'Kompor Induksi',
       'price': 3000000,
-      'desc': 'kompor canggih masa kini',
-      'category': 'Alat Masak'
+      'desc': 'Masak Cepat, Hemat Energi, dan Lebih Aman!',
+      'category': 'Alat Masak',
+      'image': 'assets/Kompor induksi.jpg'
+    },
+    {
+      'name': 'Televisi LED 32"',
+      'price': 3000000,
+      'desc': 'Nikmati Hiburan Jernih dengan Tampilan Lebih Luas!',
+      'category': 'Elektronik',
+      'image': 'assets/TV LED.jpg'
+    },
+    {
+      'name': 'Set Peralatan Dapur',
+      'price': 1500000,
+      'desc': 'Lengkapi Dapurmu, Ciptakan Masakan Lezat!',
+      'category': 'Alat Masak',
+      'image': 'assets/Set Peralatan Dapur.jpg'
+    },
+    {
+      'name': 'Meja Makan Kayu',
+      'price': 4500000,
+      'desc': 'Sentuhan Elegan untuk Momen Kebersamaan yang Hangat!',
+      'category': 'Perabotan',
+      'image': 'assets/Meja Makan Kayu.jpg'
+    },
+    {
+      'name': 'Speaker Bluetooth',
+      'price': 1200000,
+      'desc': 'Suara Keren, Musik Tanpa Batas, Dimanapun!',
+      'category': 'Elektronik',
+      'image': 'assets/Speaker Bluetooth.jpg'
+    },
+    {
+      'name': 'Kamera DSLR Canon',
+      'price': 8500000,
+      'desc': 'Tangkap Setiap Detil, Abadikan Momen Berkualitas!',
+      'category': 'Elektronik',
+      'image': 'assets/Camera DSLR Canon.jpg'
     },
   ].obs;
 
