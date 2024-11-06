@@ -6,7 +6,7 @@ abstract class Routes {
   static const LOGIN = '/login';
   static const REGISTER = '/register'; // Tambahkan rute register
   static const TRANSAKSI = '/transaksi';
-  static const SHOPE = _Paths.SHOPE;
+  static const SHOPE = 'shope';
 }
 
 abstract class _Paths {
