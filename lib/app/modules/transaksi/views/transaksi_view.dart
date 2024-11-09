@@ -1,4 +1,3 @@
-// transaksi_view.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gizmogate/app/modules/transaksi/controllers/transaksi_controller.dart';
@@ -32,16 +31,17 @@ class TransaksiView extends GetView<TransaksiController> {
       body: Column(
         children: [
           SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              buildFilterButton(
-                  controller, TransaksiFilter.semuaPesanan, "Semua Pesanan"),
-              buildFilterButton(controller, TransaksiFilter.dalamPengiriman,
-                  "Dalam Pengiriman"),
-              buildFilterButton(controller, TransaksiFilter.pesananSelesai,
-                  "Pesanan Selesai"),
-            ],
+          // Membungkus Row dengan SingleChildScrollView agar bisa digulir secara horizontal
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                buildFilterButton(controller, TransaksiFilter.semuaPesanan, "Semua Pesanan"),
+                buildFilterButton(controller, TransaksiFilter.dalamPengiriman, "Dalam Pengiriman"),
+                buildFilterButton(controller, TransaksiFilter.pesananSelesai, "Pesanan Selesai"),
+              ],
+            ),
           ),
           SizedBox(height: 16),
           Expanded(

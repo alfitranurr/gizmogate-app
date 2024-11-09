@@ -30,7 +30,8 @@ class HomeView extends GetView<HomeController> {
                       height: 40,
                       width: MediaQuery.of(context).size.width * 1,
                       child: TextField(
-                        onChanged: (query) => controller.updateSearchQuery(query),
+                        onChanged: (query) =>
+                            controller.updateSearchQuery(query),
                         style: const TextStyle(color: Colors.black),
                         decoration: InputDecoration(
                           prefixIcon: const Icon(Icons.search),
@@ -169,19 +170,22 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
             Container(
-              height: 150,
+              height: 150, // Anda bisa menyesuaikan tinggi sesuai kebutuhan
               child: PageView.builder(
-                itemCount: 3,
+                itemCount: 3, // Jumlah slide yang akan ditampilkan
                 onPageChanged: (index) {
-                  controller.updateSliderIndex(index);
+                  controller.updateSliderIndex(
+                      index); // Update index saat halaman digeser
                 },
                 itemBuilder: (context, index) {
+                  String imagePath =
+                      'assets/slide${index + 1}.jpg'; // Gambar berdasarkan index
                   return Padding(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                     child: Container(
                       decoration: BoxDecoration(
-                        color: Colors.blueGrey[700],
+                        color: Colors.black,
                         borderRadius: BorderRadius.circular(10),
                         boxShadow: const [
                           BoxShadow(
@@ -191,14 +195,17 @@ class HomeView extends GetView<HomeController> {
                           ),
                         ],
                       ),
-                      child: Center(
-                        child: Text(
-                          'Slide ${index + 1}',
-                          style: const TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(
+                            10), // Menjaga sudut gambar agar bulat
+                        child: Image.asset(
+                          imagePath, // Path gambar
+                          fit: BoxFit
+                              .cover, // Gambar akan menutupi seluruh container
+                          width: double
+                              .infinity, // Membuat lebar gambar 100% dari container
+                          height: double
+                              .infinity, // Membuat tinggi gambar 100% dari container
                         ),
                       ),
                     ),
@@ -218,7 +225,7 @@ class HomeView extends GetView<HomeController> {
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: controller.sliderIndex == index
-                          ? Colors.blueGrey
+                          ? Colors.black
                           : Colors.grey,
                     ),
                   );
@@ -282,14 +289,25 @@ class HomeView extends GetView<HomeController> {
   Widget _buildCategoryBox(String name) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.blueGrey[500],
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
+      child: Stack(
+        children: [
+          // Gambar sebagai latar belakang
+          ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image.asset(
+              'assets/${name}.jpg', // Menggunakan gambar berdasarkan nama kategori
+              fit: BoxFit.cover,
+              width: double.infinity,
+              height: double.infinity,
+            ),
+          ),
+          // Teks kategori di bagian bawah
+          Positioned(
+            bottom: 8,
+            left: 8,
+            child: Text(
               name,
               style: const TextStyle(
                 fontSize: 14,
@@ -297,8 +315,8 @@ class HomeView extends GetView<HomeController> {
                 color: Colors.white,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
