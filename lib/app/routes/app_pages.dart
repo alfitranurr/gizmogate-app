@@ -38,12 +38,12 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.TRANSAKSI,
-      page: () => TransaksiView(),
+      page: () => const TransaksiView(),
       binding: TransaksiBinding(),
     ),
     GetPage(
       name: _Paths.SHOPE,
-      page: () => const ShopeView(),
+      page: () => ShopeView(),
       binding: ShopeBinding(),
     ),
   ];

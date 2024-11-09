@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:gizmogate/app/modules/shope/views/shope_view.dart';
 import '../../home/views/home_view.dart';
 import '../../transaksi/views/transaksi_view.dart';
-import '../controllers/navbar_controller.dart'; // Import NavbarController
+import '../controllers/navbar_controller.dart';
 
 class NavbarView extends StatelessWidget {
   const NavbarView({Key? key}) : super(key: key);
@@ -29,7 +29,6 @@ class NavbarView extends StatelessWidget {
           ),
         ],
         currentIndex: controller.currentIndex.value, // Menggunakan currentIndex dari controller
-        selectedItemColor: Colors.blue,
         onTap: (index) {
           controller.currentIndex.value = index; // Update currentIndex
           switch (index) {
