@@ -38,7 +38,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.TRANSAKSI,
-      page: () => const TransaksiView(),
+      page: () => TransaksiView(),
       binding: TransaksiBinding(),
     ),
     GetPage(
