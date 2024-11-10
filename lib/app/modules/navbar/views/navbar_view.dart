@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gizmogate/app/modules/shope/views/shope_view.dart';
 import '../../home/views/home_view.dart';
+import '../../profile/views/profile_view.dart';
 import '../../transaksi/views/transaksi_view.dart';
-import '../controllers/navbar_controller.dart'; // Import NavbarController
+import '../controllers/navbar_controller.dart';
 
 class NavbarView extends StatelessWidget {
   const NavbarView({Key? key}) : super(key: key);
@@ -24,12 +25,17 @@ class NavbarView extends StatelessWidget {
             label: 'Shope',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.shopping_cart),
             label: 'Transaksi',
           ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
         ],
-        currentIndex: controller.currentIndex.value, // Menggunakan currentIndex dari controller
-        selectedItemColor: Colors.blue,
+        currentIndex: controller.currentIndex.value,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.grey , // Menggunakan currentIndex dari controller
         onTap: (index) {
           controller.currentIndex.value = index; // Update currentIndex
           switch (index) {
@@ -41,6 +47,9 @@ class NavbarView extends StatelessWidget {
               break;
             case 2:
               Get.off(() => TransaksiView());
+              break;
+            case 3:
+              Get.off(() => ProfileView());
               break;
           }
         },

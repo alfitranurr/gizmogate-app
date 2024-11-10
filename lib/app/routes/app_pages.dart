@@ -6,6 +6,10 @@ import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/bindings/register_binding.dart';
 import '../modules/login/views/login_view.dart';
 import '../modules/login/views/register_view.dart';
+import '../modules/navbar/bindings/navbar_binding.dart';
+import '../modules/navbar/views/navbar_view.dart';
+import '../modules/profile/bindings/profile_binding.dart';
+import '../modules/profile/views/profile_view.dart';
 import '../modules/shope/bindings/shope_binding.dart';
 import '../modules/shope/views/shope_view.dart';
 import '../modules/transaksi/bindings/transaksi_binding.dart';
@@ -18,7 +22,7 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.TRANSAKSI;
+  static const INITIAL = Routes.REGISTER;
 
   static final routes = [
     GetPage(
@@ -43,8 +47,18 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SHOPE,
-      page: () => const ShopeView(),
+      page: () => ShopeView(),
       binding: ShopeBinding(),
     ),
+    GetPage(
+      name: _Paths.PROFILE,
+      page: () => ProfileView(),
+      binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.NAVBAR,
+      page: () => NavbarView(),
+      binding: NavbarBinding(),
+    )
   ];
 }

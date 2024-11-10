@@ -1,16 +1,14 @@
-// transaksi_view.dart
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:gizmogate/app/modules/transaksi/controllers/transaksi_controller.dart';
 
 import '../../navbar/views/navbar_view.dart';
-import '../controllers/transaksi_controller.dart';
 
 class TransaksiView extends GetView<TransaksiController> {
-  const TransaksiView({super.key});
+  TransaksiView({super.key});
   @override
   Widget build(BuildContext context) {
-    final TransaksiController controller = Get.find<TransaksiController>();
+    final TransaksiController controller = Get.put(TransaksiController());
 
     return Scaffold(
       appBar: AppBar(
@@ -33,16 +31,17 @@ class TransaksiView extends GetView<TransaksiController> {
       body: Column(
         children: [
           SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              buildFilterButton(
-                  controller, TransaksiFilter.semuaPesanan, "Semua Pesanan"),
-              buildFilterButton(controller, TransaksiFilter.dalamPengiriman,
-                  "Dalam Pengiriman"),
-              buildFilterButton(controller, TransaksiFilter.pesananSelesai,
-                  "Pesanan Selesai"),
-            ],
+          // Membungkus Row dengan SingleChildScrollView agar bisa digulir secara horizontal
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                buildFilterButton(controller, TransaksiFilter.semuaPesanan, "Semua Pesanan"),
+                buildFilterButton(controller, TransaksiFilter.dalamPengiriman, "Dalam Pengiriman"),
+                buildFilterButton(controller, TransaksiFilter.pesananSelesai, "Pesanan Selesai"),
+              ],
+            ),
           ),
           SizedBox(height: 16),
           Expanded(
